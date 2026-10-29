@@ -24,8 +24,7 @@ function demoRequest(p){
  if(p.op==='load')return Promise.resolve({success:true,...data});
  // Server-only tools: show how they look without pretending to change anything.
  if(p.op==='backups')return Promise.resolve({success:true,backups:[]});
- if(p.op==='media-scan'){const all=[...data.state.brands,...data.state.products,...data.state.events,...data.state.suppliers];return Promise.resolve({success:true,usage:{count:all.length,bytes:all.length*420000},unused:[],unusedCount:0,unusedBytes:0});}
- if(['restore-backup','import','media-clean'].includes(p.op))return Promise.reject(new Error('این ابزار روی سرور واقعی کار می‌کند و در نسخه نمایشی غیرفعال است.'));
+ if(['restore-backup','import','media-clean','media-scan'].includes(p.op))return Promise.reject(new Error('این ابزار روی سرور واقعی کار می‌کند و در نسخه نمایشی غیرفعال است.'));
  if(p.op==='settings')data.state.settings=p.settings;
  else if(p.op==='initialize')data.initialized=true;
  else if(p.op==='blog-save'){const r=clone(p.record);if(!r.id)r.id=String(Date.now());r._version=String(Date.now());const i=data.blog.findIndex(a=>a.id===r.id);if(i<0)data.blog.unshift(r);else data.blog[i]=r;try{localStorage.setItem(key,JSON.stringify(data));}catch{}return Promise.resolve({success:true,record:r});}
