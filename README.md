@@ -3,6 +3,9 @@
 Static snapshot of the redesigned website of **Herosun (هیروسان)**, an auto-parts distributor in
 south-east Iran. Live site: **https://herosunco.ir**
 
+**Content dashboard demo:** https://abolfazl-mirolyae.github.io/herosun-demo/cms/ — the real CMS front end in its
+built-in preview mode, loaded with this snapshot's public content. Edits are kept only in your browser.
+
 This copy is for my portfolio. It is served by GitHub Pages, so forms are switched off, catalogue
 PDFs and old catalogue pages open on the live site, and search engines are asked not to index it.
 
